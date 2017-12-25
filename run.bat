@@ -1,1 +1,3 @@
-cmd /K "cd C:\Users\USER\Desktop\4DAnalyzer"
+@echo off
+cd /d %~dp0
+cmd

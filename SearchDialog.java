@@ -9,6 +9,7 @@ public class SearchDialog extends Dialog
 {
 	private org.joda.time.DateTime dateFrom;
 	private org.joda.time.DateTime dateTo;
+	private org.joda.time.DateTime dateFromSelection;
 	private String searchStr;
 
 	public SearchDialog(Shell parent, String title) {
@@ -18,6 +19,7 @@ public class SearchDialog extends Dialog
 	public SearchDialog(Shell parent, String title, int style) {
 		super(parent, style);
 		setText(title);
+		dateFromSelection = new org.joda.time.DateTime();
 	}
 
 	public org.joda.time.DateTime getDateFrom() {
@@ -66,8 +68,8 @@ public class SearchDialog extends Dialog
 		btnselFrom.setText("...");
 		btnselFrom.addSelectionListener (new SelectionAdapter () {
         		public void widgetSelected (SelectionEvent e) {
-				org.joda.time.DateTime dt = showCalPopup(shell);
-				DateUtils.updateSWTwithJoda(dFrom, dt);
+				showCalPopup(shell);
+				DateUtils.updateSWTwithJoda(dFrom, dateFromSelection);
         		}
       		});
 
@@ -81,8 +83,8 @@ public class SearchDialog extends Dialog
 		btnselTo.setText("...");
 		btnselTo.addSelectionListener (new SelectionAdapter () {
         		public void widgetSelected (SelectionEvent e) {
-				org.joda.time.DateTime dt = showCalPopup(shell);
-				DateUtils.updateSWTwithJoda(dTo, dt);
+				showCalPopup(shell);
+				DateUtils.updateSWTwithJoda(dTo, dateFromSelection);
         		}
       		});
 
@@ -112,16 +114,16 @@ public class SearchDialog extends Dialog
 
 	}
 
-	private org.joda.time.DateTime showCalPopup(Shell s) {
+	private void showCalPopup(Shell s) {
 		final Shell dialog = new Shell (s, SWT.DIALOG_TRIM);
-
-		final org.joda.time.DateTime dateFromSelection = new org.joda.time.DateTime();
 
 		dialog.setLayout (new GridLayout (1, false));
 
 		final DateTime date = new DateTime (dialog, SWT.DATE | SWT.MEDIUM);
 		final DateTime calendar = new DateTime (dialog, SWT.CALENDAR | SWT.BORDER);
 		Button ok = new Button (dialog, SWT.PUSH);
+
+		Display dis = Display.getDefault();
 
 		calendar.addSelectionListener (new SelectionAdapter () {
 			public void widgetSelected (SelectionEvent e) {
@@ -139,7 +141,7 @@ public class SearchDialog extends Dialog
 		ok.setLayoutData(new GridData(SWT.CENTER, SWT.FILL, true, true));
 		ok.addSelectionListener (new SelectionAdapter () {
 			public void widgetSelected (SelectionEvent e) {
-				dateFromSelection.withDate(date.getYear(), date.getMonth(), date.getDay());
+				dateFromSelection = dateFromSelection.withDate(calendar.getYear(), calendar.getMonth(), calendar.getDay());
 				dialog.close ();
 			}
 		});
@@ -148,7 +150,11 @@ public class SearchDialog extends Dialog
 		dialog.pack ();
 		dialog.open ();
 
-		return dateFromSelection;
+		while (!dialog.isDisposed()) {
+			if(!dis.readAndDispatch()) {
+				dis.sleep();
+			}
+		}
 
 	}
 
