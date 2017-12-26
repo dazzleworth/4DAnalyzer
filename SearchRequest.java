@@ -234,7 +234,7 @@ public class SearchRequest {
 		row.getCell(cellCount).setCellStyle(style);
 
 		//sheet.setColumnWidth(cellCount, PixelUtil.pixel2WidthUnits(s.length()));
-
+		sheet.autoSizeColumn(cellCount);
 		
 		rowCount++;
 	}
