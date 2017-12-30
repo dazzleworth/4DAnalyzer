@@ -1,3 +1,5 @@
+import java.awt.*;
+
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 
@@ -9,7 +11,7 @@ import org.apache.poi.hssf.usermodel.*;
 import org.apache.poi.hssf.util.HSSFColor;
 import org.apache.poi.ss.util.CellRangeAddress;
 
-import java.io.FileOutputStream;
+import java.io.*;
 
 import java.awt.Point;
 import java.text.*;
@@ -154,6 +156,8 @@ public class SearchRequest {
 	wb.write(outStream);
 	outStream.close();
 
+	Desktop.getDesktop().open(new File(this.file));
+
 	}
 
 	private StringBuffer buildSearchRes(String dayOfMonth, String year, String day) {
@@ -179,6 +183,7 @@ public class SearchRequest {
 		midstyle.setBorderRight(HSSFCellStyle.BORDER_THIN);
 		midstyle.setBorderLeft(HSSFCellStyle.BORDER_THIN);
 
+
 		if(offset){
 			//sheet.setColumnWidth(cellCount + drawhit_col - 1, PixelUtil.pixel2WidthUnits(drawDetail.length()));
 			rr = rowControl.removeFromQueue();
@@ -200,6 +205,7 @@ public class SearchRequest {
 			rr.getCell(drawhit_col).setCellStyle(scs);
 			rowControl.addToRowQueue(rr);
 		}
+
 	}
 
 	private boolean isDrawDate(org.joda.time.DateTime dd) {
