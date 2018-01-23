@@ -10,12 +10,12 @@ The program is written in Java with different invokable components. The heavy li
 
 **__For Windows__**
 
-![tolaunch screenshot](https://imgur.com/a/FA9Nw)
+![tolaunch screenshot](https://i.imgur.com/rEiojQi.png)
 
 
 For those not conversant with the command-line, there is a `run.bat` helper to allow you to launch commands within the program by setting-up the environment. In plain English, double click on the icon that has a title run. Once launched, there are commands you can use to do specific things. Refer below to the list of commands and actions they are supposed to perform.
 
-![commandready screenshot](https://imgur.com/a/gBwJT)
+![commandready screenshot](https://i.imgur.com/2uMPbjY.png)
 
 ## Examples
 
@@ -29,4 +29,6 @@ or
 
 ```RequestForMonth Feb 2017```
 
-for short form. Months are case-insensitive
+for short form. Months are case-insensitive. 
+
+If all goes well, 
