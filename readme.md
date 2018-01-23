@@ -19,6 +19,7 @@ For those not conversant with the command-line, there is a `run.bat` helper to a
 
 ## Examples
 
+One of the important tasks to include or exclude numbers for analysis is to quickly identify 12-permutation numbers in past 4D draws. 12-permutation numbers are a combination of a 4d number of which 2 of the digits are the same. For example any of this combinations are considered 12-permutation numbes: `<span style="color:blue">XX</span><span style="color:red">YY</span>`, `<span style="color:blue">X</span><span style="color:red">Y</span><span style="color:blue">X</span><span style="color:red">Y</span>`, `<span style="color:blue">X</span><span style="color:red">YY</span><span style="color:blue">X</span>`, `<span style="color:red">Y</span><span style="color:blue">X</span><span style="color:red">Y</span><span style="color:blue">X</span>` or `<span style="color:red">Y</span><span style="color:blue">XX</span><span style="color:red">Y</span>`
 The following operations are supported - 
 
 Request all the draws for the month
