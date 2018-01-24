@@ -6,7 +6,7 @@ Welcome! I made this little program to display and analyse Singapore's 4D number
 
 ```### DISCLAIMER: This software was created to demonstrate programming skills, computer software and mathematical algorithms research. We cannot gurantee any winnings or be responsible for any monentary losses incurred as a result of its usage. Play at your own discreation.```
 
-CLick [here](http://www.singaporepools.com.sg/landing/en/Pages/index.html) for more information on Singapore's 4D lottery.
+Click [here](http://www.singaporepools.com.sg/landing/en/Pages/index.html) for more information on Singapore's 4D lottery.
 
 ## How to use?
 
@@ -26,7 +26,7 @@ For those not conversant with the command-line, there is a `run.bat` helper to a
 One of the important tasks to include or exclude numbers for analysis is to quickly identify 12-permutation numbers in past 4D draws. 12-permutation numbers are a combination of a 4d number of which at least 2 of the digits are the same. For example any of this combinations are considered 12-permutation numbes: <span style="color:blue">XX</span><span style="color:red">YZ</span>, <span style="color:blue">X</span><span style="color:red">Y</span><span style="color:blue">X</span><span style="color:red">Z</span>, <span style="color:blue">X</span><span style="color:red">YZ</span><span style="color:blue">X</span>, <span style="color:red">Y</span><span style="color:blue">X</span><span style="color:red">Y</span><span style="color:blue">X</span> or <span style="color:red">Y</span><span style="color:blue">XX</span><span style="color:red">Y</span>
 The following operations are supported - 
 
-### Request all the draws for the month
+### 1. Request all the draws for the month
 
 Now that the console has launched, it is ready to accept commands from you. To request all 12-permutation numbers for a particular month, at the cursor, type
 
@@ -155,3 +155,15 @@ Found 12-permutation: 0696  [ 9602, ]
 Found 12-permutation: 6826  [ ]
 Found 12-permutation: 6141  [ 2641, ]
 ```
+
+### 2. Search for base number
+
+Base number(s) of a 4-digit number is a pattern of (usually) 3 consecutive digits you are searching for in a 4-digit number. Take for example `4127` and `3421`. We see that the common numbers are 4, 2, and 1. The next code will search a series of draw dates to determine which drawn numbers contain the base numbers you are searching for. This tool comes in a Graphic User Interface (GUI) and gives you more flexibility in specifying your start and end dates.
+
+So with the console open, type the command `search`
+
+![search command](https://i.imgur.com/maLPiWx.png)
+
+
+
+
