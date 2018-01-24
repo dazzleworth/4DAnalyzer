@@ -4,6 +4,10 @@ Welcome! I made this little program to display and analyse Singapore's 4D number
 
 ### NOTE: This app does not facilitate gambling or participating in the lottery
 
+```### DISCLAIMER: This software was created to demonstrate programming skills, computer software and mathematical algorithms research. We cannot gurantee any winnings or be responsible for any monentary losses incurred as a result of its usage. Play at your own discreation.```
+
+CLick [here](http://www.singaporepools.com.sg/landing/en/Pages/index.html) for more information on Singapore's 4D lottery.
+
 ## How to use?
 
 The program is written in Java with different invokable components. The heavy lifting algorithms are implemented in C. Some of the programs are command-line based, some are GUI based.
@@ -19,7 +23,7 @@ For those not conversant with the command-line, there is a `run.bat` helper to a
 
 ## Examples
 
-One of the important tasks to include or exclude numbers for analysis is to quickly identify 12-permutation numbers in past 4D draws. 12-permutation numbers are a combination of a 4d number of which 2 of the digits are the same. For example any of this combinations are considered 12-permutation numbes: <span style="color:blue">XX</span><span style="color:red">YY</span>, <span style="color:blue">X</span><span style="color:red">Y</span><span style="color:blue">X</span><span style="color:red">Y</span>, <span style="color:blue">X</span><span style="color:red">YY</span><span style="color:blue">X</span>, <span style="color:red">Y</span><span style="color:blue">X</span><span style="color:red">Y</span><span style="color:blue">X</span> or <span style="color:red">Y</span><span style="color:blue">XX</span><span style="color:red">Y</span>
+One of the important tasks to include or exclude numbers for analysis is to quickly identify 12-permutation numbers in past 4D draws. 12-permutation numbers are a combination of a 4d number of which at least 2 of the digits are the same. For example any of this combinations are considered 12-permutation numbes: <span style="color:blue">XX</span><span style="color:red">YZ</span>, <span style="color:blue">X</span><span style="color:red">Y</span><span style="color:blue">X</span><span style="color:red">Z</span>, <span style="color:blue">X</span><span style="color:red">YZ</span><span style="color:blue">X</span>, <span style="color:red">Y</span><span style="color:blue">X</span><span style="color:red">Y</span><span style="color:blue">X</span> or <span style="color:red">Y</span><span style="color:blue">XX</span><span style="color:red">Y</span>
 The following operations are supported - 
 
 ### Request all the draws for the month
